@@ -16,10 +16,14 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
-    exe_mod.addImport("zqlite", zqlite.module("zqlite"));
+    const httpz = b.dependency("httpz", .{
+        .target = target,
+        .optimize = optimize,
+    });
 
-    // This creates another `std.Build.Step.Compile`, but this one builds an executable
-    // rather than a static library.
+    exe_mod.addImport("zqlite", zqlite.module("zqlite"));
+    exe_mod.addImport("httpz", httpz.module("httpz"));
+
     const exe = b.addExecutable(.{
         .name = "zyklus",
         .root_module = exe_mod,

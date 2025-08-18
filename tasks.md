@@ -1,6 +1,12 @@
 # Tasks
-- [ ] SQLite
+- [x] SQLite
     - [x] Setup [zqlite](https://github.com/karlseguin/zqlite.zig) 
     - [x] Connect to database
     - [x] Run an insert query
     - [x] Run a select query
+- [ ] Basic HTTP server
+    - [x] Setup [http.zig](https://github.com/karlseguin/http.zig) 
+    - [x] Create GET request handler
+    - [x] Serve static files
+    - [ ] Create POST request handler
+        - [ ] Parse and return JSON
