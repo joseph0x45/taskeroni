@@ -8,5 +8,7 @@
     - [x] Setup [http.zig](https://github.com/karlseguin/http.zig) 
     - [x] Create GET request handler
     - [x] Serve static files
-    - [ ] Create POST request handler
-        - [ ] Parse and return JSON
+- [ ] Authentication
+    - [ ] Create Login Page
+    - [ ] Create Login Action
+    - [ ] Implement simple token based authentication
