@@ -6,13 +6,10 @@ import (
 	"github.com/joseph0x45/taskeroni/internal/models"
 )
 
-func (c *Conn) GetUserTasks(userID string) ([]models.Task, error) {
-	//TODO: Read more about usage of make vs raw slice here
+func (c *Conn) GetTasks() ([]models.Task, error) {
 	tasks := []models.Task{}
-	const query = `
-    select * from tasks where owner_id=?
-  `
-	err := c.db.Select(&tasks, query, userID)
+	const query = "select * from tasks"
+	err := c.db.Select(&tasks, query)
 	if err != nil {
 		return nil, fmt.Errorf("Error while getting tasks: %w", err)
 	}
