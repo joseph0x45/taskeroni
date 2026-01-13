@@ -14,7 +14,7 @@ func (c *Conn) GetUserTasks(userID string) ([]models.Task, error) {
   `
 	err := c.db.Select(&tasks, query, userID)
 	if err != nil {
-		return nil, fmt.Errorf("Error while getting user tasks: %w", err)
+		return nil, fmt.Errorf("Error while getting tasks: %w", err)
 	}
 	return tasks, nil
 }
