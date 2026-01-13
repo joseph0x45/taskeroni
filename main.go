@@ -37,18 +37,9 @@ func main() {
 		DatabasePath:      dbPath,
 	})
 	cliFlag := flag.Bool("cli", false, "Use the CLI")
-	usersFlag := flag.Bool("users", false, "Manage users resource")
-	createFlag := flag.Bool("create", false, "Create selected resource")
-	usernameFlag := flag.String("username", "", "Username value")
-	passwordFlag := flag.String("password", "", "Password value")
-  flag.Parse()
+	flag.Parse()
 	if *cliFlag {
-		opts := &cli.CLIOptions{
-			Users:    *usersFlag,
-			Create:   *createFlag,
-			Username: *usernameFlag,
-			Password: *passwordFlag,
-		}
+		opts := &cli.CLIOptions{}
 		cli.DispatchCommands(opts, conn)
 		return
 	}

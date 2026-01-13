@@ -10,7 +10,6 @@ import (
 )
 
 type App struct {
-	currentUserID       string
 	currentScreen       string
 	tasks               []models.Task
 	tasksTable          table.Model
@@ -33,9 +32,6 @@ func (app *App) renderAuthScreen() string {
 }
 
 func (app App) View() string {
-	if app.currentUserID == "" {
-		return app.renderAuthScreen()
-	}
 	return app.renderTasksScreen()
 }
 
@@ -45,10 +41,6 @@ func (app App) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		switch msg.String() {
 		case "ctrl+c":
 			return app, tea.Quit
-		case "enter":
-			return app.handleAuth()
-		case "tab":
-			return app.switchFocus()
 		case "s":
 			// case "r":
 			// 	//TODO: refresh tasks
@@ -78,24 +70,12 @@ func (app App) Init() tea.Cmd {
 }
 
 func initAppInputs(inputsMap map[string]textinput.Model) {
-	usernameInput := textinput.New()
-	usernameInput.Focus()
-	usernameInput.Placeholder = "Username"
-	usernameInput.Width = 32
-	inputsMap["usernameInput"] = usernameInput
-	passwordInput := textinput.New()
-	passwordInput.Placeholder = "Password"
-	passwordInput.EchoMode = textinput.EchoPassword
-	passwordInput.EchoCharacter = '*'
-	passwordInput.Width = 32
-	inputsMap["passwordInput"] = passwordInput
 }
 
 func InitApp(renderer *lipgloss.Renderer, conn *db.Conn) *App {
 	appInputsMap := make(map[string]textinput.Model)
 	initAppInputs(appInputsMap)
 	return &App{
-		currentUserID:       "",
 		currentScreen:       "auth",
 		tasks:               nil,
 		renderer:            renderer,
