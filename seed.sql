@@ -1,11 +1,11 @@
-INSERT INTO tasks (id, label, status, due_date) VALUES 
-('task1', 'Task 1', 'Pending', '2026-01-10'),
-('task2', 'Task 2', 'Pending', '2026-01-12'),
-('task3', 'Task 3', 'In Progress', '2026-01-14'),
-('task4', 'Task 4', 'Completed', '2026-01-01'),
-('task5', 'Task 5', 'Pending', '2026-01-15'),
-('task6', 'Task 6', 'Pending', '2026-01-20'),
-('task7', 'Task 7', 'In Progress', '2026-01-05'),
-('task8', 'Task 8', 'Completed', '2026-01-02'),
-('task9', 'Task 9', 'Pending', '2026-01-25'),
-('task10', 'Task 10', 'Pending', '2026-01-30');
+INSERT INTO tasks (id, label, status, due_date) VALUES
+('1', 'Set up project repository', 'done', '2026-01-05'),
+('2', 'Design database schema', 'done', '2026-01-07'),
+('3', 'Implement SQLite storage layer', 'in_progress', '2026-01-10'),
+('4', 'Create Task struct and models', 'in_progress', '2026-01-11'),
+('5', 'Build TUI layout with Bubble Tea', 'todo', '2026-01-15'),
+('6', 'Implement task list view', 'todo', '2026-01-18'),
+('7', 'Add task creation form', 'backlog', '2026-01-20'),
+('8', 'Add task status transitions', 'backlog', '2026-01-22'),
+('9', 'Implement due date sorting', 'backlog', '2026-01-25'),
+('10', 'Write documentation and README', 'backlog', '2026-01-30');

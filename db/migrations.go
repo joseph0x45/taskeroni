@@ -11,7 +11,7 @@ var migrations = []sad.Migration{
         id text not null primary key,
         label text not null,
         status text not null,
-        due_date text not null,
+        due_date text not null
       );
     `,
 	},

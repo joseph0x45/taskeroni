@@ -1,9 +1,10 @@
 package shared
 
 const (
-	DisplayedTasksBacklog    = "backlog"
-	DisplayedTasksTodo       = "todo"
-	DisplayedTasksInProgress = "in-progress"
-	DisplayedTasksDone       = "done"
-	StateBrowsing            = "browsing"
+	BacklogBoard    = "backlog"
+	TodoBoard       = "todo"
+	InProgressBoard = "in_progress"
+	DoneBoard       = "done"
+	StateBrowsing   = "browsing"
+	StateCreating   = "creating"
 )

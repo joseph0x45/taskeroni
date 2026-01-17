@@ -2,14 +2,6 @@ package models
 
 type TaskStatus string
 
-const (
-	TaskStatusBacklog    = "backlog"
-	TaskStatusTodo       = "todo"
-	TaskStatusInProgress = "in-progress"
-	TaskStatusDone       = "done"
-)
-
-// TODO: Add priority
 type Task struct {
 	ID    string `json:"id" db:"id"`
 	Label string `json:"label" db:"label"`
